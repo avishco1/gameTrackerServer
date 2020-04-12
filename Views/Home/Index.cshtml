@@ -1,0 +1,35 @@
+﻿<div>
+    POKER APP!!!
+
+    <script>
+        let gameData = {
+            GameDate: "1/8/2020",
+            Amir: "777",
+            Avishai: "888",
+            Host: "Amir"
+        };
+
+        const data = {
+            gameData,
+            password: "666"
+        };
+
+        let url = '/api/data'
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+   .then(res => {
+       if (!res.ok) {
+           res.text().then(text => console.log('err: ' + text))
+       }
+       else {
+           console.log('ok: ');
+       }
+   });
+
+    </script>
+</div>
